@@ -1,1 +1,5 @@
 alias ec2-describe-instances="aws ec2 describe-instances --instance-id $1 --output text"
+# add -w "\n" to ~/.curlrc
+alias instancetype="curl -s http://169.254.169.254/latest/meta-data/instance-type/"
+# or add the newline to the alias
+#alias instancetype="curl -s http://169.254.169.254/latest/meta-data/instance-type/ -w '\n'"
