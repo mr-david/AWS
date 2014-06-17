@@ -1,0 +1,1 @@
+alias ec2-describe-instances="aws ec2 describe-instances --instance-id $1 --output text"
