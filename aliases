@@ -1,5 +1,13 @@
+# these aliases should go in your .bashrc
+
 alias ec2-describe-instances="aws ec2 describe-instances --instance-id $1 --output text"
 # add -w "\n" to ~/.curlrc
 alias instancetype="curl -s http://169.254.169.254/latest/meta-data/instance-type/"
 # or add the newline to the alias
 #alias instancetype="curl -s http://169.254.169.254/latest/meta-data/instance-type/ -w '\n'"
+
+alias ec2-terminate-instances="aws ec2 terminate-instances --instance-ids $1"
+# this one isn't working yet
+alias ec2-create-volume="aws ec2 create-volume --availability-zone $1 --size $2"
+alias ec2-delete-volume="aws ec2 delete-volume --volume-id $1"
+
