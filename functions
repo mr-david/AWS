@@ -1,0 +1,27 @@
+# add these to your .bashrc
+
+# EC2 specific commands -- will only work on EC2 hosts
+# the echo "" can be omitted if you have -w "\n" in your .curlrc
+
+# print the instance id
+myinstanceid() {
+    curl -s http://169.254.169.254/latest/meta-data/instance-id; echo "";
+}
+
+# print the instance type (m1.small, m3.large, etc)
+myinstancesize() {
+    curl -s http://169.254.169.254/latest/meta-data/instance-type; echo "";
+}
+
+# print the public ip address if there is one attached
+# this returns a 404 if there is no public ip
+# TODO: check the response and pretty print it
+myinstancepublicip() {
+    curl -s http://169.254.169.254/latest/meta-data/public-ipv4; echo "";
+}
+
+# print out various info about the instance 
+myserverinfo() {
+    curl -s http://169.254.169.254/latest/dynamic/instance-identity/document/; echo "";
+}
+
